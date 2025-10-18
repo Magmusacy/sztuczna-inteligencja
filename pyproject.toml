@@ -10,14 +10,17 @@ dependencies = [
     "imbalanced-learn>=0.14.0",
     "jupyter",
     "jupyterlab-execute-time",
+    "jupyterthemes>=0.20.0",
     "jupytext",
     "lightgbm==4.*",
     "matplotlib",
+    "notebook>=7.4.7",
     "numpy",
     "pandas",
+    "pip>=25.2",
     "scikit-learn>=1.7.2",
     "scikit-surprise>=1.1.4",
-    "torch>=2.8.0"
+    "torch>=2.8.0",
 ]
 
 [tool.uv]

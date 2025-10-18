@@ -130,11 +130,14 @@ dependencies = [
     { name = "imbalanced-learn" },
     { name = "jupyter" },
     { name = "jupyterlab-execute-time" },
+    { name = "jupyterthemes" },
     { name = "jupytext" },
     { name = "lightgbm" },
     { name = "matplotlib" },
+    { name = "notebook" },
     { name = "numpy" },
     { name = "pandas" },
+    { name = "pip" },
     { name = "scikit-learn" },
     { name = "scikit-surprise" },
     { name = "torch" },
@@ -145,11 +148,14 @@ requires-dist = [
     { name = "imbalanced-learn", specifier = ">=0.14.0" },
     { name = "jupyter" },
     { name = "jupyterlab-execute-time" },
+    { name = "jupyterthemes", specifier = ">=0.20.0" },
     { name = "jupytext" },
     { name = "lightgbm", specifier = "==4.*" },
     { name = "matplotlib" },
+    { name = "notebook", specifier = ">=7.4.7" },
     { name = "numpy" },
     { name = "pandas" },
+    { name = "pip", specifier = ">=25.2" },
     { name = "scikit-learn", specifier = ">=1.7.2" },
     { name = "scikit-surprise", specifier = ">=1.1.4" },
     { name = "torch", specifier = ">=2.8.0" },
@@ -1015,6 +1021,22 @@ wheels = [
 ]
 
 [[package]]
+name = "jupyterthemes"
+version = "0.20.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "ipython" },
+    { name = "jupyter-core" },
+    { name = "lesscpy" },
+    { name = "matplotlib" },
+    { name = "notebook" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f7/78/16808dd4002e2ca477e3af2f503d331faeabe2ee03c2ddf62e706c927467/jupyterthemes-0.20.0.tar.gz", hash = "sha256:2a8ebc0c84b212ab99b9f1757fc0582a3f53930d3a75b2492d91a7c8b36ab41e", size = 6719959, upload-time = "2018-11-22T17:02:21.929Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8a/08/9dee6dfd7f2aad6c30282d55c8f495b4dc1e4747b4e2bdbeb80572ddf312/jupyterthemes-0.20.0-py2.py3-none-any.whl", hash = "sha256:4bd42fc88a06e3afabbe70c2ee25e6467147512993a3cbd9bec57ae3fd2e2fb1", size = 7020104, upload-time = "2018-11-22T17:02:16.88Z" },
+]
+
+[[package]]
 name = "jupytext"
 version = "1.17.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1127,6 +1149,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/1d/37/a13baf0135f348af608c667633cbe5d13aa2c5c15a56ae9ad3e6cba45ae3/lark-1.3.0.tar.gz", hash = "sha256:9a3839d0ca5e1faf7cfa3460e420e859b66bcbde05b634e73c369c8244c5fa48", size = 259551, upload-time = "2025-09-22T13:45:05.072Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a8/3e/1c6b43277de64fc3c0333b0e72ab7b52ddaaea205210d60d9b9f83c3d0c7/lark-1.3.0-py3-none-any.whl", hash = "sha256:80661f261fb2584a9828a097a2432efd575af27d20be0fd35d17f0fe37253831", size = 113002, upload-time = "2025-09-22T13:45:03.747Z" },
+]
+
+[[package]]
+name = "lesscpy"
+version = "0.15.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "ply" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9f/e4/a0aad58ca8e755a8192c975163847a1b712a7a6130b087248be24c07a316/lesscpy-0.15.1.tar.gz", hash = "sha256:1045d17a98f688646ca758dff254e6e9c03745648e051a081b0395c3b77c824c", size = 177240, upload-time = "2022-10-21T11:39:14.247Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/2a/da/4a20ba69c9c71ce3d522da5a3c617254d1d1430b71f52b7d46dbf2c06b96/lesscpy-0.15.1-py2.py3-none-any.whl", hash = "sha256:8d26e58ed4812b345c2896daea435a28cb3182f87ae3391157085255d4c37dff", size = 46702, upload-time = "2022-10-21T11:36:56.742Z" },
 ]
 
 [[package]]
@@ -1750,12 +1784,30 @@ wheels = [
 ]
 
 [[package]]
+name = "pip"
+version = "25.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/20/16/650289cd3f43d5a2fadfd98c68bd1e1e7f2550a1a5326768cddfbcedb2c5/pip-25.2.tar.gz", hash = "sha256:578283f006390f85bb6282dffb876454593d637f5d1be494b5202ce4877e71f2", size = 1840021, upload-time = "2025-07-30T21:50:15.401Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b7/3f/945ef7ab14dc4f9d7f40288d2df998d1837ee0888ec3659c813487572faa/pip-25.2-py3-none-any.whl", hash = "sha256:6d67a2b4e7f14d8b31b8b52648866fa717f45a1eb70e83002f4331d07e953717", size = 1752557, upload-time = "2025-07-30T21:50:13.323Z" },
+]
+
+[[package]]
 name = "platformdirs"
 version = "4.4.0"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/23/e8/21db9c9987b0e728855bd57bff6984f67952bea55d6f75e055c46b5383e8/platformdirs-4.4.0.tar.gz", hash = "sha256:ca753cf4d81dc309bc67b0ea38fd15dc97bc30ce419a7f58d13eb3bf14c4febf", size = 21634, upload-time = "2025-08-26T14:32:04.268Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/40/4b/2028861e724d3bd36227adfa20d3fd24c3fc6d52032f4a93c133be5d17ce/platformdirs-4.4.0-py3-none-any.whl", hash = "sha256:abd01743f24e5287cd7a5db3752faf1a2d65353f38ec26d98e25a6db65958c85", size = 18654, upload-time = "2025-08-26T14:32:02.735Z" },
+]
+
+[[package]]
+name = "ply"
+version = "3.11"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz", hash = "sha256:00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3", size = 159130, upload-time = "2018-02-15T19:01:31.097Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl", hash = "sha256:096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce", size = 49567, upload-time = "2018-02-15T19:01:27.172Z" },
 ]
 
 [[package]]
