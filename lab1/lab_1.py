@@ -217,7 +217,7 @@ plt.show()
 # %% editable=true slideshow={"slide_type": ""} tags=["ex"]
 # remove outliers
 # your_code
-
+df = df.loc[df["GrLivArea"] <= 4000, :]
 
 # %% editable=true slideshow={"slide_type": ""} tags=["ex"]
 for e in df.itertuples():
@@ -263,7 +263,7 @@ plt.show()
 # %% editable=true slideshow={"slide_type": ""} tags=["ex"]
 # apply log transform
 # your_code
-
+df["SalePrice"] = np.log1p(df["SalePrice"])
 
 # %% editable=true slideshow={"slide_type": ""} tags=["ex"]
 assert 9.0 <= df.loc[:, "SalePrice"].max() <= 14.0
@@ -424,7 +424,10 @@ replace_na(df, "FireplaceQu", value="No")
 
 # %% editable=true slideshow={"slide_type": ""} tags=["ex"]
 # your_code
-
+replace_na(df, "CentralAir", "N")
+replace_na(df, "EnclosedPorch", 0)
+replace_na(df, "Fireplaces", 0)
+replace_na(df, "SaleCondition", "Normal")
 
 # %% editable=true slideshow={"slide_type": ""} tags=["ex"]
 assert df['CentralAir'].isna().sum() == 0
@@ -743,15 +746,25 @@ one_hot_encoder = OneHotEncoder(
 median_imputer = SimpleImputer(strategy="median")
 min_max_scaler = MinMaxScaler()
 
-categorical_pipeline = None  # your_code_here
+categorical_pipeline = Pipeline([
+    ('encoder', one_hot_encoder),
+])  # your_code_here
 
-numerical_pipeline = None  # your_code_here
+numerical_pipeline = Pipeline([
+    ('imputer', median_imputer),
+    ('scaler', min_max_scaler),
+])  # your_code_here
 
-column_transformer = None  # your_code_here
+column_transformer = ColumnTransformer([
+    ('categorical', categorical_pipeline, categorical_features),
+    ('numerical', numerical_pipeline, numerical_features),
+], verbose_feature_names_out=False)  # your_code_here
 
 # fit and transform
+column_transformer.fit(X_train)
+column_transformer.transform(X_train)
+column_transformer.transform(X_test)
 
-# your_code
 
 
 # %% editable=true slideshow={"slide_type": ""} tags=["ex"]
